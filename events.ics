@@ -9,7 +9,7 @@ BEGIN:VEVENT
   UID:1
   DTSTART;VALUE=DATE:20161116
   DTEND;VALUE=DATE:20161116
-  SUMMARY:We got engaged 1 year ago today 👸💍😻
+  SUMMARY:We got engaged 1 year ago today
   LOCATION:London
   DESCRIPTION:We got engaged 1 year ago today
 END:VEVENT
