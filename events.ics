@@ -9,8 +9,16 @@ BEGIN:VEVENT
   UID:1
   DTSTART;VALUE=DATE:20161116
   DTEND;VALUE=DATE:20161116
-  SUMMARY:Engagment Anniversary - 1 Year 
+  SUMMARY:We got engaged 1 year ago today 👸💍😻
   LOCATION:London
   DESCRIPTION:We got engaged 1 year ago today
+END:VEVENT
+BEGIN:VEVENT
+  UID:1
+  DTSTART;VALUE=DATE:20161216
+  DTEND;VALUE=DATE:20161216
+  SUMMARY:Engagment Anniversary - 1 Year 1 Month
+  LOCATION:London
+  DESCRIPTION:We got engaged 1 year and 1 month ago today
 END:VEVENT
 END:VCALENDAR
