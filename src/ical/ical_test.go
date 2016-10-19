@@ -3,28 +3,28 @@ package ical_test
 import (
     "testing"
     "strings"
-    "ical"
+    "ical/event"
 )
 
 func createTestEvent() string {
-    e := ical.CreateEvent("unique@id")
+    e := event.CreateEvent("unique@id")
     return e.ToString()
 }
 
 func TestEventContainsABeginVEvent(t *testing.T) {
     if (!strings.Contains(createTestEvent(), "BEGIN:VEVENT")) {
-        t.Error("ical did not have a begin event")
+        t.Error("event did not have a begin event")
     }
 }
 
 func TestEventContainsAnEndVEvent(t *testing.T) {
     if (!strings.Contains(createTestEvent(), "END:VEVENT")) {
-        t.Error("ical did not have an end event")
+        t.Error("event did not have an end event")
     }
 }
 
 func TestEventContainsUid(t *testing.T) {
     if (!strings.Contains(createTestEvent(), "unique@id")) {
-        t.Error("ical event does not have an id")
+        t.Error("event event does not have an id")
     }
 }
