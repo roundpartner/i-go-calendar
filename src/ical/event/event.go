@@ -18,7 +18,7 @@ func (e Event) ToString() string {
         e.footer() + "\n"
 }
 
-func CreateEvent(uid string) Event {
+func MakeEvent(uid string) Event {
     e := Event{uid:uid}
     return e
 }

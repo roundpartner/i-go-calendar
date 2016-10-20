@@ -1,13 +1,12 @@
-package ical_test
+package event
 
 import (
     "testing"
     "strings"
-    "ical/event"
 )
 
 func createTestEvent() string {
-    e := event.CreateEvent("unique@id")
+    e := MakeEvent("unique@id")
     return e.ToString()
 }
 
@@ -24,7 +23,8 @@ func TestEventContainsAnEndVEvent(t *testing.T) {
 }
 
 func TestEventContainsUid(t *testing.T) {
-    if (!strings.Contains(createTestEvent(), "unique@id")) {
+    if (!strings.Contains(createTestEvent(), "UID:unique@id")) {
         t.Error("event event does not have an id")
     }
 }
+
