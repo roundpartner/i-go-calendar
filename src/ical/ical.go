@@ -6,6 +6,7 @@ import (
 )
 
 type Calendar struct {
+    name string
     events []event.Event
 }
 
@@ -15,22 +16,31 @@ func (c Calendar) ToString() string {
         buffer.WriteString(event.ToString())
     }
     return "BEGIN:VCALENDAR\n" +
+        "VERSION:2.0\n" +
+        "PRODID:-//Thomas Lorentsen//Personal Events v0.1//EN\n" +
+        "X-PUBLISHED-TTL:PT1H\n" +
+        "CALSCALE:GREGORIAN\n" +
+        "METHOD:PUBLISH\n" +
+        "X-WR-CALNAME:" + c.name + "\n" +
         buffer.String() +
         "END:VCALENDAR\n"
 }
 
 func (c Calendar) AddEvent(event event.Event) Calendar {
     events := append(c.events, event)
-    return Calendar{events:events}
+    return MakeCalendar(c.name, events)
 }
 
-func MakeCalendar() Calendar {
-    events := make([]event.Event, 0)
-    c := Calendar{events:events}
+func MakeCalendar(name string, events []event.Event) Calendar {
+    c := Calendar{name:name,events:events}
     return c
 }
 
-func CreateCalendar() string {
-    c := MakeCalendar()
+func MakeEmptyCalendar(name string) Calendar {
+    return MakeCalendar(name, make([]event.Event, 0))
+}
+
+func CreateCalendar(name string) string {
+    c := MakeEmptyCalendar(name)
     return c.ToString()
 }
