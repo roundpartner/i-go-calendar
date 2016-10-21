@@ -20,7 +20,7 @@ func TestCreateCalendarEndsCalendar(t *testing.T) {
 
 func TestAddEvent(t *testing.T) {
     c := MakeCalendar()
-    c = c.AddEvent(event.MakeEvent("test@event"))
+    c = c.AddEvent(event.MakeEvent("test@event", "20161216", "summary content", "London", "description content"))
     if (!strings.Contains(c.ToString(), "UID:test@event")) {
         t.Error("Calendar event was not added")
     }
