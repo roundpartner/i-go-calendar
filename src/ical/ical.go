@@ -1,7 +1,7 @@
 package ical
 
 import (
-    "ical/event"
+    "github.com/roundpartner/i-go-calendar/src/ical/event"
     "bytes"
 )
 

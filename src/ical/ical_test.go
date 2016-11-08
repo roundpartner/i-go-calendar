@@ -3,7 +3,7 @@ package ical
 import (
     "testing"
     "strings"
-    "ical/event"
+    "github.com/roundpartner/i-go-calendar/src/ical/event"
 )
 
 func makeCalendar() Calendar {
