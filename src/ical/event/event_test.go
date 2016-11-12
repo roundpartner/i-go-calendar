@@ -3,10 +3,12 @@ package event
 import (
     "testing"
     "strings"
+    "time"
 )
 
 func createTestEvent() Event {
-    return MakeEvent("test@event", "20161216", "summary content", "London", "description content")
+    date := time.Date(2016, time.December, 16, 0, 0, 0, 0, time.UTC)
+    return MakeEvent("test@event", date, "summary content", "London", "description content")
 }
 
 func createTestEventString() string {
