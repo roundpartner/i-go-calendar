@@ -37,7 +37,8 @@ func MakeCalendar(name string, events []event.Event) Calendar {
 }
 
 func MakeEmptyCalendar(name string) Calendar {
-    return MakeCalendar(name, make([]event.Event, 0))
+    events := make([]event.Event, 0)
+    return MakeCalendar(name, events)
 }
 
 func CreateCalendar(name string) string {
