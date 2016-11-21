@@ -36,7 +36,7 @@ func TestCalendarNameIsSet(t *testing.T) {
 func TestAddEvent(t *testing.T) {
     c := makeCalendar()
     date := time.Date(2016, time.December, 16, 0, 0, 0, 0, time.UTC)
-    c = c.AddEvent(event.MakeEvent("test@event", date, "summary content", "London", "description content"))
+    _ = c.AddEvent(event.MakeEvent("test@event", date, "summary content", "London", "description content"))
     if (!strings.Contains(c.ToString(), "UID:test@event")) {
         t.Error("Calendar event was not added")
     }

@@ -26,8 +26,9 @@ func (c Calendar) ToString() string {
         "END:VCALENDAR\n"
 }
 
-func (c Calendar) AddEvent(event event.Event) Calendar {
+func (c *Calendar) AddEvent(event event.Event) Calendar {
     events := append(c.events, event)
+    c.events = events
     return MakeCalendar(c.name, events)
 }
 
